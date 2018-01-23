@@ -1,4 +1,4 @@
-# Skeleton Starter for Vaadin Elements and React
+# Base Starter for Vaadin Elements and React
 
 ## Prerequisites
 First [install npm](https://docs.npmjs.com/getting-started/installing-node).
