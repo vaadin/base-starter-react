@@ -14,7 +14,7 @@ class App extends Component {
   
   render() {
     return (
-      <div>
+      <div className="App">
         <vaadin-text-field ref="text" placeholder="Type Something"></vaadin-text-field>
         <vaadin-button onClick={this.clicked}>Click Me!</vaadin-button>
         <h2>Hello {this.state.greeting}!</h2>
