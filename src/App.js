@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+
+import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
+import '@vaadin/vaadin-button/vaadin-button.js';
+import '@vaadin/vaadin-text-field/vaadin-text-field.js';
+
 import './App.css';
 
 class App extends Component {
@@ -11,7 +16,7 @@ class App extends Component {
   clicked() {
     this.setState({greeting: this.refs.text.value})
   }
-  
+
   render() {
     return (
       <div className="App">
