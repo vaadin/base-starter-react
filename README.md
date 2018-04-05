@@ -2,17 +2,12 @@
 
 ## Prerequisites
 First [install npm](https://docs.npmjs.com/getting-started/installing-node).
-Then install Bower:
-``` bash
-$ npm install -g bower
-```
 
 ## Running the application
 
 You can run the application by issuing the following commands at the root of the project in your terminal window:
 ``` bash
 $ npm install
-$ bower install
 $ npm start
 ```
 
@@ -31,30 +26,21 @@ $ create-react-app hello-react
 $ cd hello-react
 
 $ npm install
-$ bower init
 
-# Keep everything default
-$ cat > .bowerrc
-{"directory": "public/bower_components"}
-ctrl+D
-
-$ bower install --save Polymer/polymer
-$ bower install --save vaadin
-```
-
-Add `/public/bower_components` to the dependencies section of `.gitignore` to avoid pushing dependencies to version control.
-
-Open `public/index.html`
-	In the `<head>` section, add:
-```html
-<script src="%PUBLIC_URL%/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-valo-theme/vaadin-button.html">
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-button/vaadin-button.html">
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-valo-theme/vaadin-text-field.html">
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-text-field/vaadin-text-field.html">
+$ npm install --save @polymer/polymer@next
+$ npm install --save @vaadin/vaadin-button
+$ npm install --save @vaadin/vaadin-text-field
+$ npm i --save @webcomponents/webcomponentsjs@latest
 ```
 
 Open `src/App.js` and in the `class`..
+
+	In the `import` section, add:
+``` typescript
+import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
+import '@vaadin/vaadin-button/vaadin-button.js';
+import '@vaadin/vaadin-text-field/vaadin-text-field.js';
+```
 	Define a constructor with a simple property:
 ```javascript
 constructor(props) {
