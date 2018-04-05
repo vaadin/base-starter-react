@@ -33,15 +33,18 @@ $ npm install --save @vaadin/vaadin-text-field
 $ npm i --save @webcomponents/webcomponentsjs@latest
 ```
 
-Open `src/App.js` and in the `class`..
+Open `src/App.js` and in the `class`.
 
-	In the `import` section, add:
+In the `import` section, add:
+
 ``` typescript
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 import '@vaadin/vaadin-button/vaadin-button.js';
 import '@vaadin/vaadin-text-field/vaadin-text-field.js';
 ```
-	Define a constructor with a simple property:
+
+Define a constructor with a simple property:
+
 ```javascript
 constructor(props) {
   super(props);
@@ -49,7 +52,9 @@ constructor(props) {
   this.clicked = this.clicked.bind(this);
 }
 ```
-	Replace all the HTML in the `return` of `render` method with:
+
+Replace all the HTML in the `return` of `render` method with:
+
 ```html
 <div>
   <vaadin-text-field ref="text" placeholder="Type Something"></vaadin-text-field>
@@ -57,7 +62,9 @@ constructor(props) {
   <h2>Hello {this.state.greeting}!</h2>
 </div>
 ```
-	Define the click event
+
+Define the click event
+
 ```javascript
 clicked() {
   this.setState({greeting: this.refs.text.value})
