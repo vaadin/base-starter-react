@@ -33,7 +33,7 @@ $ npm install --save @vaadin/vaadin-text-field
 $ npm i --save @webcomponents/webcomponentsjs@latest
 ```
 
-Open `src/App.js` and in the `class`.
+Open `src/App.js`.
 
 In the `import` section, add:
 
