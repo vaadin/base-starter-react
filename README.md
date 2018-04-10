@@ -2,17 +2,12 @@
 
 ## Prerequisites
 First [install npm](https://docs.npmjs.com/getting-started/installing-node).
-Then install Bower:
-``` bash
-$ npm install -g bower
-```
 
 ## Running the application
 
 You can run the application by issuing the following commands at the root of the project in your terminal window:
 ``` bash
 $ npm install
-$ bower install
 $ npm start
 ```
 
@@ -31,50 +26,56 @@ $ create-react-app hello-react
 $ cd hello-react
 
 $ npm install
-$ bower init
 
-# Keep everything default
-$ cat > .bowerrc
-{"directory": "public/bower_components"}
-ctrl+D
-
-$ bower install --save Polymer/polymer
-$ bower install --save vaadin
+$ npm install --save @polymer/polymer@next
+$ npm install --save @vaadin/vaadin-button
+$ npm install --save @vaadin/vaadin-text-field
+$ npm i --save @webcomponents/webcomponentsjs@latest
 ```
 
-Add `/public/bower_components` to the dependencies section of `.gitignore` to avoid pushing dependencies to version control.
+Open `src/index.js`.
 
-Open `public/index.html`
-	In the `<head>` section, add:
-```html
-<script src="%PUBLIC_URL%/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-valo-theme/vaadin-button.html">
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-button/vaadin-button.html">
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-valo-theme/vaadin-text-field.html">
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-text-field/vaadin-text-field.html">
+In the `import` section before the app importing, add:
+
+``` typescript
+import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 ```
 
-Open `src/App.js` and in the `class`..
-	Define a constructor with a simple property:
+Open `src/App.js`.
+
+In the `import` section, add:
+
+``` typescript
+import '@vaadin/vaadin-button/vaadin-button.js';
+import '@vaadin/vaadin-text-field/vaadin-text-field.js';
+```
+
+Define a constructor with a simple property:
+
 ```javascript
 constructor(props) {
   super(props);
   this.state = {greeting: "React App"};
   this.clicked = this.clicked.bind(this);
+  this.textField = React.createRef();
 }
 ```
-	Replace all the HTML in the `return` of `render` method with:
+
+Replace all the HTML in the `return` of `render` method with:
+
 ```html
 <div>
-  <vaadin-text-field ref="text" placeholder="Type Something"></vaadin-text-field>
+  <vaadin-text-field ref={this.textField} placeholder="Type Something"></vaadin-text-field>
   <vaadin-button onClick={this.clicked}>Click Me!</vaadin-button>
   <h2>Hello {this.state.greeting}!</h2>
 </div>
 ```
-	Define the click event
+
+Define the click event
+
 ```javascript
 clicked() {
-  this.setState({greeting: this.refs.text.value})
+  this.setState({greeting: this.textField.current.value})
 }
 ```
 
