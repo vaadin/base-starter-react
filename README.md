@@ -39,7 +39,7 @@ $ cat > .bowerrc
 ctrl+D
 
 $ bower install --save Polymer/polymer
-$ bower install --save vaadin
+$ bower install --save vaadin-core
 ```
 
 Add `/public/bower_components` to the dependencies section of `.gitignore` to avoid pushing dependencies to version control.
@@ -48,9 +48,7 @@ Open `public/index.html`
 	In the `<head>` section, add:
 ```html
 <script src="%PUBLIC_URL%/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-valo-theme/vaadin-button.html">
 <link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-button/vaadin-button.html">
-<link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-valo-theme/vaadin-text-field.html">
 <link rel="import" href="%PUBLIC_URL%/bower_components/vaadin-text-field/vaadin-text-field.html">
 ```
 
