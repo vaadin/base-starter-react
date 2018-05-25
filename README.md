@@ -1,7 +1,7 @@
 # Base Starter for Vaadin components with React
 
 ## Prerequisites
-First [install yarn](https://yarnpkg.com/lang/en/docs/install).
+First [install yarn](https://yarnpkg.com/docs/install).
 
 ## Running the application
 
