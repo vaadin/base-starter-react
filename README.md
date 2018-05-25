@@ -27,7 +27,7 @@ $ cd hello-react
 
 $ yarn install
 
-$ yarn add @polymer/polymer@next
+$ yarn add @polymer/polymer
 $ yarn add @vaadin/vaadin-button
 $ yarn add @vaadin/vaadin-text-field
 $ yarn add @webcomponents/webcomponentsjs@latest
