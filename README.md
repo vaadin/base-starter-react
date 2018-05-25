@@ -20,17 +20,17 @@ Find information on how to perform common tasks in [this guide](https://github.c
 
 Execute the following commands:
 ``` bash
-$ yarn install -g create-react-app
+$ yarn add g create-react-app
 
 $ create-react-app hello-react
 $ cd hello-react
 
 $ yarn install
 
-$ yarn install --save @polymer/polymer@next
-$ yarn install --save @vaadin/vaadin-button
-$ yarn install --save @vaadin/vaadin-text-field
-$ yarn i --save @webcomponents/webcomponentsjs@latest
+$ yarn add @polymer/polymer@next
+$ yarn add @vaadin/vaadin-button
+$ yarn add @vaadin/vaadin-text-field
+$ yarn add @webcomponents/webcomponentsjs@latest
 ```
 
 Open `src/index.js`.
@@ -79,4 +79,4 @@ clicked() {
 }
 ```
 
-Run the app with `npm start`
+Run the app with `yarn start`
