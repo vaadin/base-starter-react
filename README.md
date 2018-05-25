@@ -20,7 +20,7 @@ Find information on how to perform common tasks in [this guide](https://github.c
 
 Execute the following commands:
 ``` bash
-$ yarn add g create-react-app
+$ yarn global add create-react-app
 
 $ create-react-app hello-react
 $ cd hello-react
