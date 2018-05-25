@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 /** Polyfill required for web components **/
-import '@webcomponents/webcomponentsjs/webcomponents-sd-ce.js';
+import '@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
