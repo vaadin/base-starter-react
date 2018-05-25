@@ -8,7 +8,8 @@
     "react-scripts": "^1.1.4",
     "@polymer/polymer": "^3.0.0-pre.12",
     "@vaadin/vaadin-button": "^2.0.0-pre.2",
-    "@vaadin/vaadin-text-field": "^2.0.1-pre.1"
+    "@vaadin/vaadin-text-field": "^2.0.1-pre.1",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
