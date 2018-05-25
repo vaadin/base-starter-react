@@ -1,14 +1,14 @@
 # Base Starter for Vaadin components with React
 
 ## Prerequisites
-First [install npm](https://docs.npmjs.com/getting-started/installing-node).
+First [install yarn](https://yarnpkg.com/lang/en/docs/install).
 
 ## Running the application
 
 You can run the application by issuing the following commands at the root of the project in your terminal window:
 ``` bash
-$ npm install
-$ npm start
+$ yarn install
+$ yarn start
 ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -20,17 +20,17 @@ Find information on how to perform common tasks in [this guide](https://github.c
 
 Execute the following commands:
 ``` bash
-$ npm install -g create-react-app
+$ yarn install -g create-react-app
 
 $ create-react-app hello-react
 $ cd hello-react
 
-$ npm install
+$ yarn install
 
-$ npm install --save @polymer/polymer@next
-$ npm install --save @vaadin/vaadin-button
-$ npm install --save @vaadin/vaadin-text-field
-$ npm i --save @webcomponents/webcomponentsjs@latest
+$ yarn install --save @polymer/polymer@next
+$ yarn install --save @vaadin/vaadin-button
+$ yarn install --save @vaadin/vaadin-text-field
+$ yarn i --save @webcomponents/webcomponentsjs@latest
 ```
 
 Open `src/index.js`.
@@ -38,7 +38,7 @@ Open `src/index.js`.
 In the `import` section before the app importing, add:
 
 ``` typescript
-import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
+import '@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js';
 ```
 
 Open `src/App.js`.
