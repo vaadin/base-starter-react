@@ -6,7 +6,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "^1.1.4",
-    "@polymer/polymer": "^3.0.0-pre.13",
+    "@polymer/polymer": "^3.0.0",
     "@vaadin/vaadin-button": "^2.0.0-pre.4",
     "@vaadin/vaadin-text-field": "^2.0.1-pre.2",
     "@webcomponents/webcomponentsjs": "^2.0.0"
