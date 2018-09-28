@@ -10,6 +10,12 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>
+    <script>if (!window.customElements) { document.write('<!--'); }</script>
+    <script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>
+    <!--! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
