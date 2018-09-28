@@ -18,41 +18,100 @@ Find information on how to perform common tasks in [this guide](https://github.c
 
 ## Recreating this project from scratch
 
-Execute the following commands:
-``` bash
+### Initialize using Create React App
+
+```sh
 $ yarn global add create-react-app
 
 $ create-react-app hello-react
 $ cd hello-react
 
 $ yarn install
+```
 
-$ yarn add @polymer/polymer
+### Upgrade to latest react-scripts
+
+This is needed to get Babel 7 and compile Vaadin components properly.
+
+```sh
+$ yarn upgrade react-scripts@next
+```
+
+Note: Vaadin components support modern browsers and IE11, so the `browserslist` section
+in `package.json`, which is added when upgrading, should be updated to look like this:
+
+```js
+  "browserslist": [
+    "last 2 versions",
+    "ie 11"
+  ]
+```
+
+### Install dependencies
+
+```sh
 $ yarn add @vaadin/vaadin-button
 $ yarn add @vaadin/vaadin-text-field
 $ yarn add @webcomponents/webcomponentsjs
 ```
 
-Open `src/index.js`.
+### Add Web Components polyfill
 
-In the `import` section before the app importing, add:
+1. Install the utility to copy polyfills:
 
-``` typescript
-import '@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js';
+```sh
+$ yarn add vendor-copy
 ```
 
-Open `src/App.js`.
+2. Update `scripts` section in `package.json` and add the line:
 
-In the `import` section, add:
+```js
+  "postinstall": "vendor-copy"
+```
 
-``` typescript
+3. Add the following section to `package.json`:
+
+```js
+  "vendorCopy": [
+    {
+      "from": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
+      "to": "public/vendor/custom-elements-es5-adapter.js"
+    },
+    {
+      "from": "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
+      "to": "public/vendor/webcomponents-bundle.js"
+    }
+  ],
+```
+
+4. Open `public/index.html` and add the following lines:
+```html
+  <script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>
+  <script>if (!window.customElements) { document.write('<!--'); }</script>
+  <script src="%PUBLIC_URL%/vendor/custom-elements-es5-adapter.js"></script>
+  <!--! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+```
+
+5. Make sure the scripts are copied:
+
+```sh
+$ yarn run postinstall
+```
+
+### Making Vaadin components work
+
+Open `src/App.js` and do the following modifications.
+
+1. Import Vaadin components:
+
+```js
 import '@vaadin/vaadin-button/vaadin-button.js';
 import '@vaadin/vaadin-text-field/vaadin-text-field.js';
 ```
 
-Define a constructor with a simple property:
+2. Define a constructor for the App component:
 
-```javascript
+```js
 constructor(props) {
   super(props);
   this.state = {greeting: "React App"};
@@ -61,22 +120,24 @@ constructor(props) {
 }
 ```
 
-Replace all the HTML in the `return` of `render` method with:
+3. Update the `render` method of the App component to return HTML:
 
 ```html
-<div>
+<div className="App">
   <vaadin-text-field ref={this.textField} placeholder="Type Something"></vaadin-text-field>
   <vaadin-button onClick={this.clicked}>Click Me!</vaadin-button>
   <h2>Hello {this.state.greeting}!</h2>
 </div>
 ```
 
-Define the click event
+4. Define the click event handler
 
-```javascript
+```js
 clicked() {
   this.setState({greeting: this.textField.current.value})
 }
 ```
+
+### Starting the application
 
 Run the app with `yarn start`
