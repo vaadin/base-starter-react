@@ -29,21 +29,17 @@ $ cd hello-react
 $ yarn install
 ```
 
-### Upgrade to latest react-scripts
+### Update browsers list
 
-This is needed to get Babel 7 and compile Vaadin components properly.
-
-```sh
-$ yarn upgrade react-scripts@next
-```
-
-Note: Vaadin components support modern browsers and IE11, so the `browserslist` section
-in `package.json`, which is added when upgrading, should be updated to look like this:
+Vaadin components support modern browsers and IE11, so the `browserslist` section
+in `package.json` should be updated to look like this:
 
 ```js
   "browserslist": [
     "last 2 versions",
-    "ie 11"
+    "not dead",
+    "ie 11",
+    "not op_mini all"
   ]
 ```
 
