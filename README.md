@@ -84,7 +84,7 @@ $ yarn add vendor-copy
   ],
 ```
 
-4. Open `public/index.html` and add the following lines:
+4. Open `public/index.html` and add the following lines in the `<head>` section:
 ```html
   <script src="%PUBLIC_URL%/vendor/webcomponents-bundle.js"></script>
   <script>if (!window.customElements) { document.write('<!--'); }</script>
