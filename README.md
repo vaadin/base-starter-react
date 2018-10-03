@@ -91,7 +91,7 @@ $ yarn add vendor-copy
 5. Make sure the scripts are copied:
 
 ```sh
-$ yarn run postinstall
+$ yarn postinstall
 ```
 
 ### Making Vaadin components work
