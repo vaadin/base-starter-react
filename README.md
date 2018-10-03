@@ -126,14 +126,10 @@ constructor(props) {
 </div>
 ```
 
-4. Define the click event handler
+4. Define the click event handler:
 
 ```js
 clicked() {
   this.setState({greeting: this.textField.current.value})
 }
 ```
-
-## Starting the application
-
-Run the app with `yarn start`
