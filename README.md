@@ -94,7 +94,7 @@ $ yarn add vendor-copy
 $ yarn postinstall
 ```
 
-### Making Vaadin components work
+### Add Web Components to the project
 
 Open `src/App.js` and do the following modifications.
 
@@ -134,6 +134,6 @@ clicked() {
 }
 ```
 
-### Starting the application
+## Starting the application
 
 Run the app with `yarn start`
