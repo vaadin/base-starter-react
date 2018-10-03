@@ -30,6 +30,8 @@
   ],
   "browserslist": [
     "last 2 versions",
-    "ie 11"
+    "not dead",
+    "ie 11",
+    "not op_mini all"
   ]
 }
