@@ -46,8 +46,7 @@ in `package.json` should be updated to look like this:
 ### Install dependencies
 
 ```sh
-$ yarn add @vaadin/vaadin-button
-$ yarn add @vaadin/vaadin-text-field
+$ yarn add @vaadin/vaadin-core
 $ yarn add @webcomponents/webcomponentsjs
 ```
 
